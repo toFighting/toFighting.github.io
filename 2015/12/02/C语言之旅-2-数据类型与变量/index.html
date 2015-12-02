@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="C语言," />
 
 
 
@@ -51,16 +51,16 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta name="description" content="思来想去，最后决定还是把变量和数据类型合在一块讲了，因为这两个关系实在太过密切，只讲其一就太过单调了。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2015/11/30/hello-world/index.html">
+<meta property="og:title" content="C语言之旅-2-数据类型与变量">
+<meta property="og:url" content="http://yoursite.com/2015/12/02/C语言之旅-2-数据类型与变量/index.html">
 <meta property="og:site_name" content="Fighting">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
-<meta property="og:updated_time" content="2015-11-30T06:12:42.000Z">
+<meta property="og:description" content="思来想去，最后决定还是把变量和数据类型合在一块讲了，因为这两个关系实在太过密切，只讲其一就太过单调了。">
+<meta property="og:updated_time" content="2015-12-02T09:19:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta name="twitter:title" content="C语言之旅-2-数据类型与变量">
+<meta name="twitter:description" content="思来想去，最后决定还是把变量和数据类型合在一块讲了，因为这两个关系实在太过密切，只讲其一就太过单调了。">
 
 
 
@@ -72,7 +72,7 @@
   };
 </script>
 
-  <title> Hello World | Fighting </title>
+  <title> C语言之旅-2-数据类型与变量 | Fighting </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -258,7 +258,7 @@
             
             
               
-                Hello World
+                C语言之旅-2-数据类型与变量
               
             
           </h1>
@@ -267,19 +267,34 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-11-30T22:38:10+08:00" content="2015-11-30">
-              2015-11-30
+            <time itemprop="dateCreated" datetime="2015-12-02T15:07:23+08:00" content="2015-12-02">
+              2015-12-02
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/C语言/" itemprop="url" rel="index">
+                    <span itemprop="name">C语言</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/11/30/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/30/hello-world/" itemprop="commentsCount"></span>
+                <a href="/2015/12/02/C语言之旅-2-数据类型与变量/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/02/C语言之旅-2-数据类型与变量/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -298,35 +313,42 @@
       
 
       
-        <span itemprop="articleBody"><p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<a id="more"></a>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <span itemprop="articleBody"><p>思来想去，最后决定还是把变量和数据类型合在一块讲了，因为这两个关系实在太过密切，只讲其一就太过单调了。<br><a id="more"></a></p>
+<h2 id="数据类型">数据类型</h2><p>首先我们一起回忆一下学生时代的数学，数学中数字大体分为整数与小数。</p>
+<p>众所周知的在计算机的世界里面它只认识01其他一律不认识。<br>所以在计算机中有很多的整型类型。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span>   <span class="keyword">short</span>   <span class="keyword">int</span>   <span class="keyword">long</span>   <span class="keyword">long</span> <span class="keyword">long</span></span><br></pre></td></tr></table></figure></p>
+<p>因为计算机是为人类服务，而在现实生活中仅仅只是整数并不能满足要求，故而在c语言中有浮点类型。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">float</span> <span class="keyword">double</span></span><br></pre></td></tr></table></figure></p>
+<p>到这也许会有人问了，为什么要定义这么多类型呢？<br>由于历史原因，在计算机刚出世的时候，那时候内存是弥足珍贵的，所以定义的类型占用的内存字节数比较小。然而虽然缓解了内存使用，但是紧接着问题来了，当我们想存入很大的数时，完全存不下，这该怎么办呢？那么只能增加数据类型。这样既能选择合适的数据类型，又能适当节省内存了。</p>
+<h3 id="数据类型占用内存大小">数据类型占用内存大小</h3><p>以下是32位平台上的大小<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">数据类型        字节数         比特位</span><br><span class="line"><span class="keyword">char</span>               <span class="number">1</span>             <span class="number">8</span></span><br><span class="line"><span class="keyword">short</span>              <span class="number">2</span>             <span class="number">16</span></span><br><span class="line"><span class="keyword">int</span>                <span class="number">4</span>             <span class="number">32</span></span><br><span class="line"><span class="keyword">long</span>               <span class="number">4</span>             <span class="number">32</span></span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span>          <span class="number">8</span>             <span class="number">64</span></span><br><span class="line"><span class="keyword">float</span>              <span class="number">4</span>             <span class="number">32</span></span><br><span class="line"><span class="keyword">double</span>             <span class="number">8</span>             <span class="number">64</span></span><br></pre></td></tr></table></figure></p>
+<p>其实还有unsigned 的类型，请读者自行脑补。</p>
+<h2 id="变量">变量</h2><p>什么是变量，笔者当初学习的时候困扰了很久，最后，对内存操作略有了解才有深入的理解。<br>先看一段代码:<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">0</span>;</span><br><span class="line">a = <span class="number">1</span>;</span><br></pre></td></tr></table></figure></p>
+<p>在上面这段代码中 int a = 0的意思是定义 一个int 类型的变量，这个变量的名字叫做a，并且初始化这个变量为0。<br>上面这个变量a就类似于一个容器，它是一段固定大小内存的别名，而0这个值是放在容器中的。a = 1是将1重新填充这个变量a。变量a就像一个瓶子，先装一瓶水，然后倒掉再装一瓶酒精一样。</p>
+<p>总而言之，变量就是一个容器，可以存储对应类型的值。</p>
+<p>然而瓶子也是有容量的，当向瓶子中装入多余它容量的液体时，那么液体肯定会溢出来。变量也有相同的特性，当放入的值大于变量类型的最大可接受的值的时候，那么肯定发生溢出了。数值溢出不仅会在初学者身上发生，同样一个疏忽一样发生在有多年经验的程序员身上。</p>
+<p>好啦，这篇博文就到这了，如果对您有所帮助还请继续关注，如果对您毫无帮助，请联系博主，或者右上角红叉。</p>
 </span>
       
     </div>
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/C语言/" rel="tag">#C语言</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2015/12/01/C语言之旅-1-起航/" rel="next" title="C语言之旅--1--起航">
+                <i class="fa fa-chevron-left"></i> C语言之旅--1--起航
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/12/01/C语言之旅-1-起航/" rel="prev" title="C语言之旅--1--起航">
-                C语言之旅--1--起航 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -341,10 +363,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/11/30/hello-world/"
-     data-title="Hello World"
+        <div class="ds-share flat" data-thread-key="2015/12/02/C语言之旅-2-数据类型与变量/"
+     data-title="C语言之旅-2-数据类型与变量"
      data-content=""
-     data-url="http://yoursite.com/2015/11/30/hello-world/">
+     data-url="http://yoursite.com/2015/12/02/C语言之旅-2-数据类型与变量/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -372,8 +394,8 @@
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/11/30/hello-world/"
-           data-title="Hello World" data-url="http://yoursite.com/2015/11/30/hello-world/">
+      <div class="ds-thread" data-thread-key="2015/12/02/C语言之旅-2-数据类型与变量/"
+           data-title="C语言之旅-2-数据类型与变量" data-url="http://yoursite.com/2015/12/02/C语言之旅-2-数据类型与变量/">
       </div>
     
   </div>
@@ -470,7 +492,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick_Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create_a_new_post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run_server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate_static_files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy_to_remote_sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">1.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型占用内存大小"><span class="nav-number">1.1.</span> <span class="nav-text">数据类型占用内存大小</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量"><span class="nav-number">2.</span> <span class="nav-text">变量</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
