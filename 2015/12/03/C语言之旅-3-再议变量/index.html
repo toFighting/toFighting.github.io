@@ -51,16 +51,16 @@
 
 
 
-<meta name="description" content="思来想去，最后决定还是把变量和数据类型合在一块讲了，因为这两个关系实在太过密切，只讲其一就太过单调了。">
+<meta name="description" content="上一篇博文我们已经初步的了解了什么是数据类型，数据类型有哪些！以及形象的说明了一下变量的简要特性，本篇讲解变量的各种属性。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C语言之旅-2-数据类型与变量">
-<meta property="og:url" content="http://yoursite.com/2015/12/02/C语言之旅-2-数据类型与变量/index.html">
+<meta property="og:title" content="C语言之旅-3-再议变量">
+<meta property="og:url" content="http://yoursite.com/2015/12/03/C语言之旅-3-再议变量/index.html">
 <meta property="og:site_name" content="Fighting">
-<meta property="og:description" content="思来想去，最后决定还是把变量和数据类型合在一块讲了，因为这两个关系实在太过密切，只讲其一就太过单调了。">
-<meta property="og:updated_time" content="2015-12-02T09:19:28.000Z">
+<meta property="og:description" content="上一篇博文我们已经初步的了解了什么是数据类型，数据类型有哪些！以及形象的说明了一下变量的简要特性，本篇讲解变量的各种属性。">
+<meta property="og:updated_time" content="2015-12-03T10:26:24.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C语言之旅-2-数据类型与变量">
-<meta name="twitter:description" content="思来想去，最后决定还是把变量和数据类型合在一块讲了，因为这两个关系实在太过密切，只讲其一就太过单调了。">
+<meta name="twitter:title" content="C语言之旅-3-再议变量">
+<meta name="twitter:description" content="上一篇博文我们已经初步的了解了什么是数据类型，数据类型有哪些！以及形象的说明了一下变量的简要特性，本篇讲解变量的各种属性。">
 
 
 
@@ -72,7 +72,7 @@
   };
 </script>
 
-  <title> C语言之旅-2-数据类型与变量 | Fighting </title>
+  <title> C语言之旅-3-再议变量 | Fighting </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -258,7 +258,7 @@
             
             
               
-                C语言之旅-2-数据类型与变量
+                C语言之旅-3-再议变量
               
             
           </h1>
@@ -267,8 +267,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-12-02T15:07:23+08:00" content="2015-12-02">
-              2015-12-02
+            <time itemprop="dateCreated" datetime="2015-12-03T11:35:01+08:00" content="2015-12-03">
+              2015-12-03
             </time>
           </span>
 
@@ -293,8 +293,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/12/02/C语言之旅-2-数据类型与变量/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/02/C语言之旅-2-数据类型与变量/" itemprop="commentsCount"></span>
+                <a href="/2015/12/03/C语言之旅-3-再议变量/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/03/C语言之旅-3-再议变量/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -313,17 +313,23 @@
       
 
       
-        <span itemprop="articleBody"><p>思来想去，最后决定还是把变量和数据类型合在一块讲了，因为这两个关系实在太过密切，只讲其一就太过单调了。<br><a id="more"></a></p>
-<h2 id="数据类型">数据类型</h2><p>首先我们一起回忆一下学生时代的数学，数学中数字大体分为整数与小数。</p>
-<p>众所周知的在计算机的世界里面它只认识01其他一律不认识。<br>所以在计算机中有很多的整型类型。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span>   <span class="keyword">short</span>   <span class="keyword">int</span>   <span class="keyword">long</span>   <span class="keyword">long</span> <span class="keyword">long</span></span><br></pre></td></tr></table></figure></p>
-<p>因为计算机是为人类服务，而在现实生活中仅仅只是整数并不能满足要求，故而在c语言中有浮点类型。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">float</span> <span class="keyword">double</span></span><br></pre></td></tr></table></figure></p>
-<p>到这也许会有人问了，为什么要定义这么多类型呢？<br>由于历史原因，在计算机刚出世的时候，那时候内存是弥足珍贵的，所以定义的类型占用的内存字节数比较小。然而虽然缓解了内存使用，但是紧接着问题来了，当我们想存入很大的数时，完全存不下，这该怎么办呢？那么只能增加数据类型。这样既能选择合适的数据类型，又能适当节省内存了。</p>
-<h3 id="数据类型占用内存大小">数据类型占用内存大小</h3><p>以下是32位平台上的大小<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">数据类型        字节数         比特位</span><br><span class="line"><span class="keyword">char</span>               <span class="number">1</span>             <span class="number">8</span></span><br><span class="line"><span class="keyword">short</span>              <span class="number">2</span>             <span class="number">16</span></span><br><span class="line"><span class="keyword">int</span>                <span class="number">4</span>             <span class="number">32</span></span><br><span class="line"><span class="keyword">long</span>               <span class="number">4</span>             <span class="number">32</span></span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span>          <span class="number">8</span>             <span class="number">64</span></span><br><span class="line"><span class="keyword">float</span>              <span class="number">4</span>             <span class="number">32</span></span><br><span class="line"><span class="keyword">double</span>             <span class="number">8</span>             <span class="number">64</span></span><br></pre></td></tr></table></figure></p>
-<p>其实还有unsigned 的类型，请读者自行脑补。</p>
-<h2 id="变量">变量</h2><p>什么是变量，笔者当初学习的时候困扰了很久，最后，对内存操作略有了解才有深入的理解。<br>先看一段代码:<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">0</span>;</span><br><span class="line">a = <span class="number">1</span>;</span><br></pre></td></tr></table></figure></p>
-<p>在上面这段代码中 int a = 0的意思是定义 一个int 类型的变量，这个变量的名字叫做a，并且初始化这个变量为0。<br>上面这个变量a就类似于一个容器，它是一段固定大小内存的别名，而0这个值是放在容器中的。a = 1是将1重新填充这个变量a。变量a就像一个瓶子，先装一瓶水，然后倒掉再装一瓶酒精一样。</p>
-<p>总而言之，变量就是一个容器，可以存储对应类型的值。</p>
-<p>然而瓶子也是有容量的，当向瓶子中装入多余它容量的液体时，那么液体肯定会溢出来。变量也有相同的特性，当放入的值大于变量类型的最大可接受的值的时候，那么肯定发生溢出了。数值溢出不仅会在初学者身上发生，同样一个疏忽一样发生在有多年经验的程序员身上。</p>
+        <span itemprop="articleBody"><p>上一篇博文我们已经初步的了解了什么是数据类型，数据类型有哪些！以及形象的说明了一下变量的简要特性，本篇讲解变量的各种属性。</p>
+<a id="more"></a>
+<h2 id="变量的分类">变量的分类</h2><p>变量大体有两种类型，分别是全局变量、局部变量。<br>全局变量与局部变量的区别在于是否在{}中。<br>例如:<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> g_var = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> local_var = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"hello world\n"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>上面代码中变量g_var就是全局变量，local_var是局部变量。<br>注:mian函数的参数argc、argv都是局部变量。</p>
+<h2 id="变量的作用域">变量的作用域</h2><h3 id="作用域">作用域</h3><p>作用域的最大单位是文件（编译的最小单位是文件），作用域的最小单位是{}，变量的作用域决定了变量在程序中的可见性。<br>1.变量的作用域，始于定义处，结束于作用域结束。<br>2.相同的作用域内不可以有重名的变量。<br>3.当局部变量与全局变量发生重名的时候，局部会覆盖全局的变量。小范围与大范围<br>4.的变量发生重名的时候，小范围会覆盖大范围的变量。</p>
+<p>全局变量的作用域是文件，局部变量的作用域是{},</p>
+<p>下面来看一个例子:<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> g_var = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> var = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"hello world\n"</span>);</span><br><span class="line">    <span class="keyword">int</span> var = <span class="number">1</span>;                        <span class="comment">//&#123;&#125;外的var</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"var: %d\n&#123;\n"</span>, var);</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> var = <span class="number">5</span>;                    <span class="comment">//&#123;&#125;中的var</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"var: %d\n&#125;\n"</span>, var);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"var: %d\n"</span>, var);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>编译并执行上面的程序，可以得到如下的输出结果:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">hello world</span><br><span class="line">var: <span class="number">1</span></span><br><span class="line">&#123; </span><br><span class="line">var: <span class="number">5</span></span><br><span class="line">&#125; </span><br><span class="line">var: <span class="number">1</span></span><br></pre></td></tr></table></figure></p>
+<p>为什么会输出1、5、1呢？<br>这就是作用域的问题，因为变量的最小作用域范围是{}，所以当进入{}的时候，{}中的var会覆盖{}外的var，所以会打印出5，当出了{}后，{}里的var失去作用，那么打印的数值当然是{}外的var的值。</p>
+<h2 id="变量的生命周期">变量的生命周期</h2><p>局部变量的生命周期，同所在的函数，全局变量的生命周期同main()，全局变量与进程共存亡。</p>
+<h2 id="变量的修饰">变量的修饰</h2><p>修饰类型影响了变量的生命周期和存储区域。</p>
+<h3 id="auto_自动变量">auto 自动变量</h3><p>局部变量在缺省存储类型的情况下归为自动变量。<br> 作用：修饰局部变量<br> 存储区域: 栈<br> 生命周期：同所在的函数或作用域，<br> 特点：如未初始化，初始值未知。</p>
+<h3 id="register_寄存器变量">register 寄存器变量</h3><p>存放在CPU 的寄存器中。对于循环次数较多的循环控制变量及循环体内反复使用<br>的变量均可定义为寄存器变量。<br> 作用：修饰局部变量影响了变量的存储区域<br> 存储区域：寄存器<br> 生命周期：同所在的函数或作用域，随用随开，用完即消。<br> 特点：如未初始化，初始值未知。不可取地址，易被编绎器优化。</p>
+<h3 id="static_静态变量">static 静态变量</h3><p>在程序执行时存在，并且只要整个程序在运行，就可以继续访问该变量。<br> 作用：修饰局部变量和全局变量<br> 存储区域：数据区<br> 生命周期：同main()<br> 特点：只初始化一次， 默认初始化为0，生命周期同main();<br>影响了全局变量的作用域和局部变量生命周期。</p>
+<h3 id="extern_扩展类型">extern 扩展类型</h3><p>扩展全局的作用域。同文件中，或不同文件中。<br> 作用：修饰全局变量。<br> 存储区域：数据区<br> 生命周期：同main()<br> 特点：因为是修饰的是全局变量，所以只扩展了其作用域（本文件内或跨文件）。</p>
+<p>下面看一个综合案例:<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> g_var = <span class="number">0</span>;            <span class="comment">//全局变量，保存在data段，作用域是本文件能被外部文件引用，生命周期是与进程共存亡</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> g_var_s = <span class="number">0</span>;   <span class="comment">//静态的全局变量，保存在data段，作用域是本文件且不能被外部文件引用，生命周期与进程共存亡。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">extern</span> <span class="keyword">int</span> g_var_e;       <span class="comment">//引用外部文件的全局变脸</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> local_var = <span class="number">0</span>;    <span class="comment">//局部变量, 保存在栈中，当离开函数时自动消亡</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> local_var_s = <span class="number">0</span>; <span class="comment">//静态局部变量，保存在data段，只初始化一次，退出函数后不会丢失，生存周期和进程共存亡</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>忠告:当我们定义变量的时候需要根据其意义给其定义合适的变量名，当全局变量是通常以g开头，局部变量就看个人喜好了。另外，当定义变量后最好将其初始化。</p>
 <p>好啦，这篇博文就到这了，如果对您有所帮助还请继续关注，如果对您毫无帮助，请联系博主，或者右上角红叉。</p>
 </span>
       
@@ -342,17 +348,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/12/01/C语言之旅-1-起航/" rel="next" title="C语言之旅--1--起航">
-                <i class="fa fa-chevron-left"></i> C语言之旅--1--起航
+              <a href="/2015/12/02/C语言之旅-2-数据类型与变量/" rel="next" title="C语言之旅-2-数据类型与变量">
+                <i class="fa fa-chevron-left"></i> C语言之旅-2-数据类型与变量
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/12/03/C语言之旅-3-再议变量/" rel="prev" title="C语言之旅-3-再议变量">
-                C语言之旅-3-再议变量 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -367,10 +369,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/12/02/C语言之旅-2-数据类型与变量/"
-     data-title="C语言之旅-2-数据类型与变量"
+        <div class="ds-share flat" data-thread-key="2015/12/03/C语言之旅-3-再议变量/"
+     data-title="C语言之旅-3-再议变量"
      data-content=""
-     data-url="http://yoursite.com/2015/12/02/C语言之旅-2-数据类型与变量/">
+     data-url="http://yoursite.com/2015/12/03/C语言之旅-3-再议变量/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -398,8 +400,8 @@
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/12/02/C语言之旅-2-数据类型与变量/"
-           data-title="C语言之旅-2-数据类型与变量" data-url="http://yoursite.com/2015/12/02/C语言之旅-2-数据类型与变量/">
+      <div class="ds-thread" data-thread-key="2015/12/03/C语言之旅-3-再议变量/"
+           data-title="C语言之旅-3-再议变量" data-url="http://yoursite.com/2015/12/03/C语言之旅-3-再议变量/">
       </div>
     
   </div>
@@ -496,7 +498,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">1.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型占用内存大小"><span class="nav-number">1.1.</span> <span class="nav-text">数据类型占用内存大小</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量"><span class="nav-number">2.</span> <span class="nav-text">变量</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#变量的分类"><span class="nav-number">1.</span> <span class="nav-text">变量的分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量的作用域"><span class="nav-number">2.</span> <span class="nav-text">变量的作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#作用域"><span class="nav-number">2.1.</span> <span class="nav-text">作用域</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量的生命周期"><span class="nav-number">3.</span> <span class="nav-text">变量的生命周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量的修饰"><span class="nav-number">4.</span> <span class="nav-text">变量的修饰</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#auto_自动变量"><span class="nav-number">4.1.</span> <span class="nav-text">auto 自动变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#register_寄存器变量"><span class="nav-number">4.2.</span> <span class="nav-text">register 寄存器变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#static_静态变量"><span class="nav-number">4.3.</span> <span class="nav-text">static 静态变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#extern_扩展类型"><span class="nav-number">4.4.</span> <span class="nav-text">extern 扩展类型</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
