@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="C语言," />
 
 
 
@@ -51,16 +51,17 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta name="description" content="想来想去，还是 觉得把进程空间放在这篇博客写，这样有助于后面的更好的理解内存，理解了内存相信指针的理解与使用会更加简单。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2015/11/30/hello-world/index.html">
+<meta property="og:title" content="C语言之旅-4-进程空间">
+<meta property="og:url" content="http://yoursite.com/2015/12/04/C语言之旅-4-进程空间/index.html">
 <meta property="og:site_name" content="Fighting">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
-<meta property="og:updated_time" content="2015-11-30T06:12:42.000Z">
+<meta property="og:description" content="想来想去，还是 觉得把进程空间放在这篇博客写，这样有助于后面的更好的理解内存，理解了内存相信指针的理解与使用会更加简单。">
+<meta property="og:image" content="http://yoursite.com/uploads/C语言/C语言之旅-4-进程空间.png">
+<meta property="og:updated_time" content="2015-12-04T14:46:15.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta name="twitter:title" content="C语言之旅-4-进程空间">
+<meta name="twitter:description" content="想来想去，还是 觉得把进程空间放在这篇博客写，这样有助于后面的更好的理解内存，理解了内存相信指针的理解与使用会更加简单。">
 
 
 
@@ -72,7 +73,7 @@
   };
 </script>
 
-  <title> Hello World | Fighting </title>
+  <title> C语言之旅-4-进程空间 | Fighting </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -258,7 +259,7 @@
             
             
               
-                Hello World
+                C语言之旅-4-进程空间
               
             
           </h1>
@@ -267,19 +268,34 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-11-30T22:38:10+08:00" content="2015-11-30">
-              2015-11-30
+            <time itemprop="dateCreated" datetime="2015-12-04T10:37:45+08:00" content="2015-12-04">
+              2015-12-04
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/C语言/" itemprop="url" rel="index">
+                    <span itemprop="name">C语言</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/11/30/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/30/hello-world/" itemprop="commentsCount"></span>
+                <a href="/2015/12/04/C语言之旅-4-进程空间/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/04/C语言之旅-4-进程空间/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -298,35 +314,37 @@
       
 
       
-        <span itemprop="articleBody"><p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+        <span itemprop="articleBody"><p>想来想去，还是 觉得把进程空间放在这篇博客写，这样有助于后面的更好的理解内存，理解了内存相信指针的理解与使用会更加简单。</p>
 <a id="more"></a>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+<h3 id="程序vs_进程">程序vs 进程</h3><p> 程序：源代码经编译器编译后生成的可执行文件。<br> 进程：可执行文件，运行后被加载内存中运行。运行的过程，即为进程。以下是可<br>执行文件被加载到内存以后内存分布情况。</p>
+<h3 id="进程空间布局">进程空间布局</h3><p>操作系统（32 位）采用虚拟内存技术，将4G 的虚拟地址空间划分为两个部分:用<br>户空间和内核空间。</p>
+<h4 id="用户空间">用户空间</h4><p>从0—-0xbfffffff,内核空间从3G—-4G。用户进程通常情<br>况下只能访问用户空间的虚拟地址，不能访问内核空间。</p>
+<p>程序中访问的内存地址不再是实际的物理内存地址，而是一个虚拟地址，然后由操作系统将这个虚拟地址映射到适当的物理内存地址上。这样，只要操作系统处理好虚拟地址到物理内存地址的映射，就可以保证不同的程序最终访问的内存地址位于不同的区域，彼此没有重叠，就可以达到内存地址空间隔离的效果。</p>
+<p><img src="/uploads/C语言/C语言之旅-4-进程空间.png" alt="..."></p>
 </span>
       
     </div>
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/C语言/" rel="tag">#C语言</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2015/12/03/C语言之旅-3-再议变量/" rel="next" title="C语言之旅-3-再议变量">
+                <i class="fa fa-chevron-left"></i> C语言之旅-3-再议变量
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/12/01/C语言之旅-1-起航/" rel="prev" title="C语言之旅--1--起航">
-                C语言之旅--1--起航 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -341,10 +359,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/11/30/hello-world/"
-     data-title="Hello World"
+        <div class="ds-share flat" data-thread-key="2015/12/04/C语言之旅-4-进程空间/"
+     data-title="C语言之旅-4-进程空间"
      data-content=""
-     data-url="http://yoursite.com/2015/11/30/hello-world/">
+     data-url="http://yoursite.com/2015/12/04/C语言之旅-4-进程空间/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -372,8 +390,8 @@
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/11/30/hello-world/"
-           data-title="Hello World" data-url="http://yoursite.com/2015/11/30/hello-world/">
+      <div class="ds-thread" data-thread-key="2015/12/04/C语言之旅-4-进程空间/"
+           data-title="C语言之旅-4-进程空间" data-url="http://yoursite.com/2015/12/04/C语言之旅-4-进程空间/">
       </div>
     
   </div>
@@ -470,7 +488,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick_Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create_a_new_post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run_server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate_static_files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy_to_remote_sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#程序vs_进程"><span class="nav-number">1.</span> <span class="nav-text">程序vs 进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进程空间布局"><span class="nav-number">2.</span> <span class="nav-text">进程空间布局</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#用户空间"><span class="nav-number">2.1.</span> <span class="nav-text">用户空间</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
