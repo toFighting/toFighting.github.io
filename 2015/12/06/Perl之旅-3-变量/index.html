@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="C语言," />
+  <meta name="keywords" content="Perl," />
 
 
 
@@ -51,16 +51,16 @@
 
 
 
-<meta name="description" content="一直想写一些关于C语言的博客，奈何总有这样或者那样的事儿给耽搁了，现在终于有点时间能够写些东西了，此文只为我的回忆，也许能帮到后来人，算是略尽绵薄之力。本文属个人备忘之作，算不得教程，如有谬误之处，还请您能够予以批评。">
+<meta name="description" content="Perl中有三种内置变量类型：Scalar、Array、Hash。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C语言之旅--1--起航">
-<meta property="og:url" content="http://yoursite.com/2015/12/01/C语言之旅-1-起航/index.html">
+<meta property="og:title" content="Perl之旅-3-变量">
+<meta property="og:url" content="http://yoursite.com/2015/12/06/Perl之旅-3-变量/index.html">
 <meta property="og:site_name" content="Fighting">
-<meta property="og:description" content="一直想写一些关于C语言的博客，奈何总有这样或者那样的事儿给耽搁了，现在终于有点时间能够写些东西了，此文只为我的回忆，也许能帮到后来人，算是略尽绵薄之力。本文属个人备忘之作，算不得教程，如有谬误之处，还请您能够予以批评。">
-<meta property="og:updated_time" content="2015-12-06T02:54:26.000Z">
+<meta property="og:description" content="Perl中有三种内置变量类型：Scalar、Array、Hash。">
+<meta property="og:updated_time" content="2015-12-06T10:38:24.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C语言之旅--1--起航">
-<meta name="twitter:description" content="一直想写一些关于C语言的博客，奈何总有这样或者那样的事儿给耽搁了，现在终于有点时间能够写些东西了，此文只为我的回忆，也许能帮到后来人，算是略尽绵薄之力。本文属个人备忘之作，算不得教程，如有谬误之处，还请您能够予以批评。">
+<meta name="twitter:title" content="Perl之旅-3-变量">
+<meta name="twitter:description" content="Perl中有三种内置变量类型：Scalar、Array、Hash。">
 
 
 
@@ -72,7 +72,7 @@
   };
 </script>
 
-  <title> C语言之旅--1--起航 | Fighting </title>
+  <title> Perl之旅-3-变量 | Fighting </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -258,7 +258,7 @@
             
             
               
-                C语言之旅--1--起航
+                Perl之旅-3-变量
               
             
           </h1>
@@ -267,8 +267,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-12-01T17:53:53+08:00" content="2015-12-01">
-              2015-12-01
+            <time itemprop="dateCreated" datetime="2015-12-06T17:29:37+08:00" content="2015-12-06">
+              2015-12-06
             </time>
           </span>
 
@@ -277,8 +277,8 @@
               &nbsp; | &nbsp; 分类于
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/C语言/" itemprop="url" rel="index">
-                    <span itemprop="name">C语言</span>
+                  <a href="/categories/Perl/" itemprop="url" rel="index">
+                    <span itemprop="name">Perl</span>
                   </a>
                 </span>
 
@@ -293,8 +293,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/12/01/C语言之旅-1-起航/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/01/C语言之旅-1-起航/" itemprop="commentsCount"></span>
+                <a href="/2015/12/06/Perl之旅-3-变量/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/06/Perl之旅-3-变量/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -313,16 +313,18 @@
       
 
       
-        <span itemprop="articleBody"><p>一直想写一些关于C语言的博客，奈何总有这样或者那样的事儿给耽搁了，现在终于有点时间能够写些东西了，此文只为我的回忆，也许能帮到后来人，算是略尽绵薄之力。本文属个人备忘之作，算不得教程，如有谬误之处，还请您能够予以批评。<br><a id="more"></a></p>
-<h2 id="编译环境">编译环境</h2><p>本来是不想说编译环境的，不过想想还是加上吧，以免后面编译时会因为环境不对，而造成无法编译的情况。</p>
-<h3 id="编译器">编译器</h3><p>如果是linux环境学习，那么这一小节可以跳过。</p>
-<p>在windows下，首选的编译器是使用<a href="http://www.mingw.org" target="_blank" rel="external">MinGW</a>，目前最新版本是5.2，当然可以选择其他编译器。<br><a href="http://sourceforge.net/projects/mingw/files/Installer/" target="_blank" rel="external">下载页面</a><br>下载正确的版本进行安装，安装过后按Win+R，键入cmd打开命令行，在命令行中输入gcc -version，如果出现版本信息，那么恭喜你，编译环境安装成功O(∩_∩)O~。</p>
-<h2 id="Hello_World">Hello World</h2><p>古往今来，各种关于编程的教材第一个例子就是HelloWorld，当然我这个俗人，难免免俗了。<br>请在记事本中键入一下代码，命名为main.c<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">main</span><span class="class">.c</span></span><br></pre></td></tr></table></figure></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在命令行下切换目录到源文件目录，然后键入命令<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">gcc</span> <span class="tag">-c</span> <span class="tag">main</span><span class="class">.c</span> <span class="tag">-o</span> <span class="tag">main</span><span class="class">.exe</span></span><br></pre></td></tr></table></figure></p>
-<p>在命令行中运行main.exe<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">Hello</span> World</span><br></pre></td></tr></table></figure></p>
-<p>如果得到以上结果，那么恭喜你，可能你已经完成了你人生中的第一个c程序。</p>
-<p>可能有的初学者在main.c中看到一些无法理解的语法，但请稍安勿躁，请容在下慢慢道来</p>
+        <span itemprop="articleBody"><p>Perl中有三种内置变量类型：Scalar、Array、Hash。</p>
+<a id="more"></a>
+<h2 id="标量变量">标量变量</h2><p>标志声明哈希的符号是$。<br>perl中标量没有类型，只是代表一个单一的值：<br><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">my</span> <span class="variable">$name</span> = <span class="string">"newegg"</span></span><br><span class="line"><span class="keyword">my</span> <span class="variable">$job</span>  = <span class="string">"student"</span></span><br></pre></td></tr></table></figure></p>
+<p>my 是一个关键字，表示一个已在同一节中解释。相当于局部变量。<br>一个标值的值可以是字符串、整数、浮点数。<br><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> <span class="variable">$name</span>;</span><br><span class="line"><span class="keyword">print</span> <span class="string">"Her name is <span class="variable">$name</span>\n"</span>;</span><br><span class="line"><span class="keyword">print</span> <span class="string">"Her job  is <span class="variable">$job</span>\n"</span>;</span><br></pre></td></tr></table></figure></p>
+<h2 id="数组标量">数组标量</h2><p>标志声明数组的符号是@。<br>数组的索引和c语言一样都是从0开始的，但是你可以改变这个值，改变默认变量$ARRAY_BASE。<br><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">my</span> <span class="variable">@anmials</span> = &#123;<span class="string">"camel"</span>, <span class="string">"llama"</span>, <span class="string">"owl"</span>&#125;;</span><br><span class="line"><span class="keyword">my</span> <span class="variable">@numbers</span> = &#123;<span class="number">23</span>, <span class="number">42</span>, <span class="number">69</span>&#125;;</span><br><span class="line"><span class="keyword">my</span> <span class="variable">@mixed</span>   = &#123;<span class="string">"camle"</span>, <span class="number">42</span>, <span class="number">1.23</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> <span class="variable">$animals</span>[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> <span class="variable">$mixed</span>[<span class="variable">$#mixed</span>];   <span class="comment"># $#可以获取数组中最后一个元素的索引</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> <span class="variable">@animals</span>；         ＃返回数组的元素个数</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> <span class="variable">@animals</span>[<span class="number">0</span>, <span class="number">1</span>]            <span class="comment">#获取数组中的多个元素</span></span><br><span class="line"><span class="keyword">print</span> <span class="variable">@animals</span>[<span class="number">0</span>..<span class="number">2</span>]            <span class="comment">#获取索引从0到2的元素</span></span><br><span class="line"><span class="keyword">print</span> <span class="variable">@animals</span>[<span class="number">1</span>..<span class="variable">$#animals</span>];   <span class="comment">#获取所有的元素</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">my</span> <span class="variable">@sorted</span> ＝ <span class="keyword">sort</span> <span class="variable">@animals</span>;     <span class="comment">#数组排序</span></span><br><span class="line"><span class="keyword">my</span> <span class="variable">@backwards</span> = <span class="keyword">reverse</span> <span class="variable">@numbers</span>;<span class="comment">#数组翻转</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="哈希变量">哈希变量</h2><p>标志声明哈希的符号是%。<br>哈希是以键值对存在的。但事实上，数组类型的哈希索引可以是一个字符串或者数字。<br><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">my</span> <span class="variable">%fruit_color</span> = (<span class="string">"apple"</span>, <span class="string">"red"</span>, <span class="string">"banana"</span>, <span class="string">"yellow"</span>);</span><br></pre></td></tr></table></figure></p>
+<p>也可以这样声明<br><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">my</span> <span class="variable">%fruit_color</span> = (</span><br><span class="line">        <span class="string">apple =&gt;</span> <span class="string">"red"</span>,</span><br><span class="line">        <span class="string">banana =&gt;</span> <span class="string">"yellow"</span>,</span><br><span class="line">    );</span><br></pre></td></tr></table></figure></p>
+<p>获取哈希中的元素<br><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$fruit_color</span>&#123;<span class="string">"apple"</span>&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>获取哈希中的key列表，以及value列表<br><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">my</span> <span class="variable">@fruits</span> = <span class="keyword">keys</span> <span class="variable">%fruits_color</span>;</span><br><span class="line"><span class="keyword">my</span> <span class="variable">@colors</span> = <span class="keyword">values</span> % fruit_color;</span><br></pre></td></tr></table></figure></p>
+<h2 id="转义字符">转义字符</h2><p>在Perl中，我们使用反斜杠字符来转移任何类型的字符。</p>
+<h2 id="大小写敏感">大小写敏感</h2><p>变量名是大小写敏感的。</p>
+<h2 id="变量的作用域">变量的作用域</h2><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">my</span> <span class="variable">$var</span> = <span class="string">"value"</span>;  <span class="comment">#局部变量</span></span><br><span class="line"><span class="variable">$var</span> = <span class="string">"value"</span>;     <span class="comment">#全局变量</span></span><br></pre></td></tr></table></figure>
 <p>好啦，这篇博文就到这了，如果对您有所帮助还请继续关注，如果对您毫无帮助，请联系博主，或者右上角红叉。</p>
 </span>
       
@@ -332,7 +334,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/C语言/" rel="tag">#C语言</a>
+            <a href="/tags/Perl/" rel="tag">#Perl</a>
           
         </div>
       
@@ -341,17 +343,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/11/30/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2015/12/06/Perl之旅-2-语法概述/" rel="next" title="Perl之旅-2-语法概述">
+                <i class="fa fa-chevron-left"></i> Perl之旅-2-语法概述
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/12/02/C语言之旅-2-数据类型与变量/" rel="prev" title="C语言之旅-2-数据类型与变量">
-                C语言之旅-2-数据类型与变量 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -366,10 +364,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/12/01/C语言之旅-1-起航/"
-     data-title="C语言之旅--1--起航"
+        <div class="ds-share flat" data-thread-key="2015/12/06/Perl之旅-3-变量/"
+     data-title="Perl之旅-3-变量"
      data-content=""
-     data-url="http://yoursite.com/2015/12/01/C语言之旅-1-起航/">
+     data-url="http://yoursite.com/2015/12/06/Perl之旅-3-变量/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -397,8 +395,8 @@
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/12/01/C语言之旅-1-起航/"
-           data-title="C语言之旅--1--起航" data-url="http://yoursite.com/2015/12/01/C语言之旅-1-起航/">
+      <div class="ds-thread" data-thread-key="2015/12/06/Perl之旅-3-变量/"
+           data-title="Perl之旅-3-变量" data-url="http://yoursite.com/2015/12/06/Perl之旅-3-变量/">
       </div>
     
   </div>
@@ -495,7 +493,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#编译环境"><span class="nav-number">1.</span> <span class="nav-text">编译环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#编译器"><span class="nav-number">1.1.</span> <span class="nav-text">编译器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hello_World"><span class="nav-number">2.</span> <span class="nav-text">Hello World</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#标量变量"><span class="nav-number">1.</span> <span class="nav-text">标量变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组标量"><span class="nav-number">2.</span> <span class="nav-text">数组标量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#哈希变量"><span class="nav-number">3.</span> <span class="nav-text">哈希变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转义字符"><span class="nav-number">4.</span> <span class="nav-text">转义字符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#大小写敏感"><span class="nav-number">5.</span> <span class="nav-text">大小写敏感</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量的作用域"><span class="nav-number">6.</span> <span class="nav-text">变量的作用域</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
