@@ -51,17 +51,16 @@
 
 
 
-<meta name="description" content="想来想去，还是 觉得把进程空间放在这篇博客写，这样有助于后面的更好的理解内存，理解了内存相信指针的理解与使用会更加简单。">
+<meta name="description" content="共用体，一种既可以节约内存，又可以多元的机制，前人实在是太聪明了，我等后辈只能望其项背了。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C语言之旅-4-进程空间">
-<meta property="og:url" content="http://yoursite.com/2015/12/04/C语言之旅-4-进程空间/index.html">
+<meta property="og:title" content="C语言之旅-7-共用体">
+<meta property="og:url" content="http://yoursite.com/2015/12/06/C语言之旅-7-共用体/index.html">
 <meta property="og:site_name" content="Fighting">
-<meta property="og:description" content="想来想去，还是 觉得把进程空间放在这篇博客写，这样有助于后面的更好的理解内存，理解了内存相信指针的理解与使用会更加简单。">
-<meta property="og:image" content="http://yoursite.com/uploads/C语言/C语言之旅-4-进程空间.png">
-<meta property="og:updated_time" content="2015-12-06T02:30:40.000Z">
+<meta property="og:description" content="共用体，一种既可以节约内存，又可以多元的机制，前人实在是太聪明了，我等后辈只能望其项背了。">
+<meta property="og:updated_time" content="2015-12-06T04:01:21.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C语言之旅-4-进程空间">
-<meta name="twitter:description" content="想来想去，还是 觉得把进程空间放在这篇博客写，这样有助于后面的更好的理解内存，理解了内存相信指针的理解与使用会更加简单。">
+<meta name="twitter:title" content="C语言之旅-7-共用体">
+<meta name="twitter:description" content="共用体，一种既可以节约内存，又可以多元的机制，前人实在是太聪明了，我等后辈只能望其项背了。">
 
 
 
@@ -73,7 +72,7 @@
   };
 </script>
 
-  <title> C语言之旅-4-进程空间 | Fighting </title>
+  <title> C语言之旅-7-共用体 | Fighting </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -259,7 +258,7 @@
             
             
               
-                C语言之旅-4-进程空间
+                C语言之旅-7-共用体
               
             
           </h1>
@@ -268,8 +267,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-12-04T10:37:45+08:00" content="2015-12-04">
-              2015-12-04
+            <time itemprop="dateCreated" datetime="2015-12-06T11:20:42+08:00" content="2015-12-06">
+              2015-12-06
             </time>
           </span>
 
@@ -294,8 +293,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/12/04/C语言之旅-4-进程空间/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/04/C语言之旅-4-进程空间/" itemprop="commentsCount"></span>
+                <a href="/2015/12/06/C语言之旅-7-共用体/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/06/C语言之旅-7-共用体/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -314,13 +313,17 @@
       
 
       
-        <span itemprop="articleBody"><p>想来想去，还是 觉得把进程空间放在这篇博客写，这样有助于后面的更好的理解内存，理解了内存相信指针的理解与使用会更加简单。</p>
+        <span itemprop="articleBody"><p>共用体，一种既可以节约内存，又可以多元的机制，前人实在是太聪明了，我等后辈只能望其项背了。</p>
 <a id="more"></a>
-<h3 id="程序vs_进程">程序vs 进程</h3><p> 程序：源代码经编译器编译后生成的可执行文件。<br> 进程：可执行文件，运行后被加载内存中运行。运行的过程，即为进程。以下是可<br>执行文件被加载到内存以后内存分布情况。</p>
-<h3 id="进程空间布局">进程空间布局</h3><p>操作系统（32 位）采用虚拟内存技术，将4G 的虚拟地址空间划分为两个部分:用<br>户空间和内核空间。</p>
-<h4 id="用户空间">用户空间</h4><p>从0—-0xbfffffff,内核空间从3G—-4G。用户进程通常情<br>况下只能访问用户空间的虚拟地址，不能访问内核空间。</p>
-<p>程序中访问的内存地址不再是实际的物理内存地址，而是一个虚拟地址，然后由操作系统将这个虚拟地址映射到适当的物理内存地址上。这样，只要操作系统处理好虚拟地址到物理内存地址的映射，就可以保证不同的程序最终访问的内存地址位于不同的区域，彼此没有重叠，就可以达到内存地址空间隔离的效果。</p>
-<p><img src="/uploads/C语言/C语言之旅-4-进程空间.png" alt="..."></p>
+<h2 id="定义及初始化">定义及初始化</h2><p>在C语言中，不同的成员使用共同的存储区域的数据构造类型称为共用体，又称联合体。<br>定义共用体的关键字是union，定义语法为：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">union</span> 共用体名称</span><br><span class="line">&#123;</span><br><span class="line">    成员列表;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>一个实际应用：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">union</span> Un</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">short</span> s[<span class="number">2</span>];</span><br><span class="line">&#125;un;</span><br><span class="line">un.i = <span class="number">10</span>;</span><br></pre></td></tr></table></figure></p>
+<p>由于i与s占用的是共用的一块内存空间，那么如果修改i的值必然会修改掉s的值。</p>
+<h3 id="一个实例">一个实例</h3><p>当想把成员类似的结构体合并时就可以用到联合体了，例如：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> Student</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">char</span> name[<span class="number">32</span>];</span><br><span class="line">    <span class="keyword">char</span> sex;</span><br><span class="line">    <span class="keyword">int</span> grade;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> Teacher</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">char</span> name[<span class="number">32</span>];</span><br><span class="line">    <span class="keyword">char</span> sex;</span><br><span class="line">    <span class="keyword">char</span> position[<span class="number">50</span>];</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> Staff</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">char</span> name[<span class="number">32</span>];</span><br><span class="line">    <span class="keyword">char</span> sex;</span><br><span class="line">    <span class="keyword">union</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> grade;</span><br><span class="line">        <span class="keyword">char</span> position[<span class="number">50</span>];</span><br><span class="line">    &#125;gOrp;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>这样就将两个结构体合并为一个结构体了。</p>
+<h3 id="另一个实例">另一个实例</h3><p>如何判别大小端对齐？<br>所谓的大端模式,是指数据的低位(就是权值较小的后面那几位)保存在内存的高地址中,而数据的高位,保存在内存的低地址中,这样的存储模式有点儿类似于把数据 当作字符串顺序处理:地址由小向大增加,而数据从高位往低位放;</p>
+<p>所谓的小端模式,是指数据的低位保存在内存的低地址中,而数据的高位保存在内存的高地址中,这种存储模式将地址的高低和数据位权有效地结合起来,高地址部分权值高,低地址部分权值低,和我们的逻辑方法一致。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">union</span> </span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span>     inum;</span><br><span class="line">    <span class="keyword">char</span>    cnum;</span><br><span class="line">&#125;un;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    un.inum = <span class="number">0x12345678</span>;</span><br><span class="line">    <span class="keyword">if</span> (un.cnum == <span class="number">0x12</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span> (<span class="string">"big endian\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"small endian\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>输出为：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">small endian</span><br></pre></td></tr></table></figure></p>
+<p>虽然这篇博文内容较少，但是还是值得一看的，谢谢各位看官的支持。</p>
 <p>好啦，这篇博文就到这了，如果对您有所帮助还请继续关注，如果对您毫无帮助，请联系博主，或者右上角红叉。</p>
 </span>
       
@@ -339,17 +342,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/12/03/C语言之旅-3-再议变量/" rel="next" title="C语言之旅-3-再议变量">
-                <i class="fa fa-chevron-left"></i> C语言之旅-3-再议变量
+              <a href="/2015/12/06/C语言之旅-6-结构体/" rel="next" title="C语言之旅-6-结构体">
+                <i class="fa fa-chevron-left"></i> C语言之旅-6-结构体
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/12/04/C语言之旅-5-数组/" rel="prev" title="C语言之旅-5-数组">
-                C语言之旅-5-数组 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -364,10 +363,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/12/04/C语言之旅-4-进程空间/"
-     data-title="C语言之旅-4-进程空间"
+        <div class="ds-share flat" data-thread-key="2015/12/06/C语言之旅-7-共用体/"
+     data-title="C语言之旅-7-共用体"
      data-content=""
-     data-url="http://yoursite.com/2015/12/04/C语言之旅-4-进程空间/">
+     data-url="http://yoursite.com/2015/12/06/C语言之旅-7-共用体/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -395,8 +394,8 @@
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/12/04/C语言之旅-4-进程空间/"
-           data-title="C语言之旅-4-进程空间" data-url="http://yoursite.com/2015/12/04/C语言之旅-4-进程空间/">
+      <div class="ds-thread" data-thread-key="2015/12/06/C语言之旅-7-共用体/"
+           data-title="C语言之旅-7-共用体" data-url="http://yoursite.com/2015/12/06/C语言之旅-7-共用体/">
       </div>
     
   </div>
@@ -493,7 +492,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#程序vs_进程"><span class="nav-number">1.</span> <span class="nav-text">程序vs 进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进程空间布局"><span class="nav-number">2.</span> <span class="nav-text">进程空间布局</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#用户空间"><span class="nav-number">2.1.</span> <span class="nav-text">用户空间</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义及初始化"><span class="nav-number">1.</span> <span class="nav-text">定义及初始化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一个实例"><span class="nav-number">1.1.</span> <span class="nav-text">一个实例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#另一个实例"><span class="nav-number">1.2.</span> <span class="nav-text">另一个实例</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
