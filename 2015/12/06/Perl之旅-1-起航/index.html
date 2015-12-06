@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="C语言," />
+  <meta name="keywords" content="Perl," />
 
 
 
@@ -51,16 +51,16 @@
 
 
 
-<meta name="description" content="思来想去，最后决定还是把变量和数据类型合在一块讲了，因为这两个关系实在太过密切，只讲其一就太过单调了。">
+<meta name="description" content="Perl笔者也是刚刚接触，看介绍就是一种解释型语言，像是一种脚本语言。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C语言之旅-2-数据类型与变量">
-<meta property="og:url" content="http://yoursite.com/2015/12/02/C语言之旅-2-数据类型与变量/index.html">
+<meta property="og:title" content="Perl之旅-1-起航">
+<meta property="og:url" content="http://yoursite.com/2015/12/06/Perl之旅-1-起航/index.html">
 <meta property="og:site_name" content="Fighting">
-<meta property="og:description" content="思来想去，最后决定还是把变量和数据类型合在一块讲了，因为这两个关系实在太过密切，只讲其一就太过单调了。">
-<meta property="og:updated_time" content="2015-12-02T09:19:28.000Z">
+<meta property="og:description" content="Perl笔者也是刚刚接触，看介绍就是一种解释型语言，像是一种脚本语言。">
+<meta property="og:updated_time" content="2015-12-06T07:06:16.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C语言之旅-2-数据类型与变量">
-<meta name="twitter:description" content="思来想去，最后决定还是把变量和数据类型合在一块讲了，因为这两个关系实在太过密切，只讲其一就太过单调了。">
+<meta name="twitter:title" content="Perl之旅-1-起航">
+<meta name="twitter:description" content="Perl笔者也是刚刚接触，看介绍就是一种解释型语言，像是一种脚本语言。">
 
 
 
@@ -72,7 +72,7 @@
   };
 </script>
 
-  <title> C语言之旅-2-数据类型与变量 | Fighting </title>
+  <title> Perl之旅-1-起航 | Fighting </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -258,7 +258,7 @@
             
             
               
-                C语言之旅-2-数据类型与变量
+                Perl之旅-1-起航
               
             
           </h1>
@@ -267,8 +267,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-12-02T15:07:23+08:00" content="2015-12-02">
-              2015-12-02
+            <time itemprop="dateCreated" datetime="2015-12-06T12:25:42+08:00" content="2015-12-06">
+              2015-12-06
             </time>
           </span>
 
@@ -277,8 +277,8 @@
               &nbsp; | &nbsp; 分类于
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/C语言/" itemprop="url" rel="index">
-                    <span itemprop="name">C语言</span>
+                  <a href="/categories/Perl/" itemprop="url" rel="index">
+                    <span itemprop="name">Perl</span>
                   </a>
                 </span>
 
@@ -293,8 +293,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/12/02/C语言之旅-2-数据类型与变量/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/02/C语言之旅-2-数据类型与变量/" itemprop="commentsCount"></span>
+                <a href="/2015/12/06/Perl之旅-1-起航/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/06/Perl之旅-1-起航/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -313,17 +313,22 @@
       
 
       
-        <span itemprop="articleBody"><p>思来想去，最后决定还是把变量和数据类型合在一块讲了，因为这两个关系实在太过密切，只讲其一就太过单调了。<br><a id="more"></a></p>
-<h2 id="数据类型">数据类型</h2><p>首先我们一起回忆一下学生时代的数学，数学中数字大体分为整数与小数。</p>
-<p>众所周知的在计算机的世界里面它只认识01其他一律不认识。<br>所以在计算机中有很多的整型类型。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span>   <span class="keyword">short</span>   <span class="keyword">int</span>   <span class="keyword">long</span>   <span class="keyword">long</span> <span class="keyword">long</span></span><br></pre></td></tr></table></figure></p>
-<p>因为计算机是为人类服务，而在现实生活中仅仅只是整数并不能满足要求，故而在c语言中有浮点类型。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">float</span> <span class="keyword">double</span></span><br></pre></td></tr></table></figure></p>
-<p>到这也许会有人问了，为什么要定义这么多类型呢？<br>由于历史原因，在计算机刚出世的时候，那时候内存是弥足珍贵的，所以定义的类型占用的内存字节数比较小。然而虽然缓解了内存使用，但是紧接着问题来了，当我们想存入很大的数时，完全存不下，这该怎么办呢？那么只能增加数据类型。这样既能选择合适的数据类型，又能适当节省内存了。</p>
-<h3 id="数据类型占用内存大小">数据类型占用内存大小</h3><p>以下是32位平台上的大小<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">数据类型        字节数         比特位</span><br><span class="line"><span class="keyword">char</span>               <span class="number">1</span>             <span class="number">8</span></span><br><span class="line"><span class="keyword">short</span>              <span class="number">2</span>             <span class="number">16</span></span><br><span class="line"><span class="keyword">int</span>                <span class="number">4</span>             <span class="number">32</span></span><br><span class="line"><span class="keyword">long</span>               <span class="number">4</span>             <span class="number">32</span></span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span>          <span class="number">8</span>             <span class="number">64</span></span><br><span class="line"><span class="keyword">float</span>              <span class="number">4</span>             <span class="number">32</span></span><br><span class="line"><span class="keyword">double</span>             <span class="number">8</span>             <span class="number">64</span></span><br></pre></td></tr></table></figure></p>
-<p>其实还有unsigned 的类型，请读者自行脑补。</p>
-<h2 id="变量">变量</h2><p>什么是变量，笔者当初学习的时候困扰了很久，最后，对内存操作略有了解才有深入的理解。<br>先看一段代码:<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">0</span>;</span><br><span class="line">a = <span class="number">1</span>;</span><br></pre></td></tr></table></figure></p>
-<p>在上面这段代码中 int a = 0的意思是定义 一个int 类型的变量，这个变量的名字叫做a，并且初始化这个变量为0。<br>上面这个变量a就类似于一个容器，它是一段固定大小内存的别名，而0这个值是放在容器中的。a = 1是将1重新填充这个变量a。变量a就像一个瓶子，先装一瓶水，然后倒掉再装一瓶酒精一样。</p>
-<p>总而言之，变量就是一个容器，可以存储对应类型的值。</p>
-<p>然而瓶子也是有容量的，当向瓶子中装入多余它容量的液体时，那么液体肯定会溢出来。变量也有相同的特性，当放入的值大于变量类型的最大可接受的值的时候，那么肯定发生溢出了。数值溢出不仅会在初学者身上发生，同样一个疏忽一样发生在有多年经验的程序员身上。</p>
+        <span itemprop="articleBody"><p>Perl笔者也是刚刚接触，看介绍就是一种解释型语言，像是一种脚本语言。</p>
+<a id="more"></a>
+<h2 id="Perl特点">Perl特点</h2><p>1.简单<br>2.可以大部分完成日常需求<br>3.运行速度快<br>4.代码难看</p>
+<h2 id="不能做的事">不能做的事</h2><p>不能做出封闭式的二进制可执行文件</p>
+<h2 id="搭建环境">搭建环境</h2><p><a href="https://www.perl.org" target="_blank" rel="external">Perl官方网址</a><br><a href="https://www.perl.org/get.html" target="_blank" rel="external">点击下载</a><br>如果您使用的是linux   macOS  那么恭喜你，你的系统已经自带了Perl，如果你使用的是windows那么请自行下载并安装。<br>在命令行窗口运行一下命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ perl -v</span><br></pre></td></tr></table></figure></p>
+<p>如果得到一下信息，那么恭喜你，你的环境已经搭建好了<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">This is perl <span class="number">5</span>, version <span class="number">18</span>, subversion <span class="number">2</span> (v5<span class="number">.18</span><span class="number">.2</span>) built <span class="keyword">for</span> darwin-thread-multi-<span class="number">2l</span>evel</span><br><span class="line">(with <span class="number">2</span> registered patches, see perl -V <span class="keyword">for</span> more detail)</span><br><span class="line"></span><br><span class="line">Copyright <span class="number">1987</span>-<span class="number">2013</span>, Larry Wall</span><br><span class="line"></span><br><span class="line">Perl may be copied only under the terms of either the Artistic License or the</span><br><span class="line">GNU General Public License, which may be found in the Perl <span class="number">5</span> source kit.</span><br><span class="line"></span><br><span class="line">Complete documentation <span class="keyword">for</span> Perl, including FAQ lists, should be found on</span><br><span class="line"><span class="keyword">this</span> system <span class="keyword">using</span> <span class="string">"man perl"</span> or <span class="string">"perldoc perl"</span>.  If you have access to the</span><br><span class="line">Internet, point your browser at http:<span class="comment">//www.perl.org/, the Perl Home Page.</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="hello_world">hello world</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">perl_program</span><span class="class">.plx</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#! /usr/bin/perl</span></span><br><span class="line"><span class="keyword">print</span> <span class="string">"Hello World\n"</span>;</span><br></pre></td></tr></table></figure>
+<p>然后修改文件的权限，添加可执行权限<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ chomd a+x perl_program.plx</span><br></pre></td></tr></table></figure></p>
+<p>执行如下命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ./perl_program.plx</span><br></pre></td></tr></table></figure></p>
+<p>得到一下结果<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hello World</span><br></pre></td></tr></table></figure></p>
+<p>那么恭喜你，你的第一个Perl程序已经运行成功了哈哈。</p>
+<h2 id="使用指定版本特性">使用指定版本特性</h2><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#! /usr/bin/perl</span></span><br><span class="line"><span class="keyword">use</span> <span class="number">5.0</span>.<span class="number">10</span></span><br><span class="line"><span class="keyword">say</span> <span class="string">"Hello World!"</span>;</span><br></pre></td></tr></table></figure>
+<p>使用say不需要换行符。</p>
+<h2 id="走马观花">走马观花</h2><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#! /usr/bin/perl                 </span></span><br><span class="line"><span class="variable">@lines</span> = <span class="string">`perldoc -u -f atan2`</span>;</span><br><span class="line"><span class="keyword">foreach</span> (<span class="variable">@lines</span>)&#123;</span><br><span class="line">    <span class="regexp">s/\w&lt;([^&gt;]+)&gt;/\U$1/g</span>;</span><br><span class="line">    <span class="keyword">print</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>解释：<br>第一行：在linux上指定执行本文件的程序<br>第二行：执行一个外部命令，并且将得到的结果放到数组lines中<br>第三行：是一个循环<br>第四行：这行过于恐怖，暂时不解<br>第五行：打印</p>
 <p>好啦，这篇博文就到这了，如果对您有所帮助还请继续关注，如果对您毫无帮助，请联系博主，或者右上角红叉。</p>
 </span>
       
@@ -333,7 +338,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/C语言/" rel="tag">#C语言</a>
+            <a href="/tags/Perl/" rel="tag">#Perl</a>
           
         </div>
       
@@ -342,17 +347,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/12/01/C语言之旅-1-起航/" rel="next" title="C语言之旅--1--起航">
-                <i class="fa fa-chevron-left"></i> C语言之旅--1--起航
+              <a href="/2015/12/06/C语言之旅-7-共用体/" rel="next" title="C语言之旅-7-共用体">
+                <i class="fa fa-chevron-left"></i> C语言之旅-7-共用体
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/12/03/C语言之旅-3-再议变量/" rel="prev" title="C语言之旅-3-再议变量">
-                C语言之旅-3-再议变量 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -367,10 +368,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/12/02/C语言之旅-2-数据类型与变量/"
-     data-title="C语言之旅-2-数据类型与变量"
+        <div class="ds-share flat" data-thread-key="2015/12/06/Perl之旅-1-起航/"
+     data-title="Perl之旅-1-起航"
      data-content=""
-     data-url="http://yoursite.com/2015/12/02/C语言之旅-2-数据类型与变量/">
+     data-url="http://yoursite.com/2015/12/06/Perl之旅-1-起航/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -398,8 +399,8 @@
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/12/02/C语言之旅-2-数据类型与变量/"
-           data-title="C语言之旅-2-数据类型与变量" data-url="http://yoursite.com/2015/12/02/C语言之旅-2-数据类型与变量/">
+      <div class="ds-thread" data-thread-key="2015/12/06/Perl之旅-1-起航/"
+           data-title="Perl之旅-1-起航" data-url="http://yoursite.com/2015/12/06/Perl之旅-1-起航/">
       </div>
     
   </div>
@@ -496,7 +497,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">1.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型占用内存大小"><span class="nav-number">1.1.</span> <span class="nav-text">数据类型占用内存大小</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量"><span class="nav-number">2.</span> <span class="nav-text">变量</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Perl特点"><span class="nav-number">1.</span> <span class="nav-text">Perl特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不能做的事"><span class="nav-number">2.</span> <span class="nav-text">不能做的事</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建环境"><span class="nav-number">3.</span> <span class="nav-text">搭建环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hello_world"><span class="nav-number">4.</span> <span class="nav-text">hello world</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用指定版本特性"><span class="nav-number">5.</span> <span class="nav-text">使用指定版本特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#走马观花"><span class="nav-number">6.</span> <span class="nav-text">走马观花</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
