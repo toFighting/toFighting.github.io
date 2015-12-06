@@ -57,7 +57,7 @@
 <meta property="og:url" content="http://yoursite.com/2015/12/01/C语言之旅-1-起航/index.html">
 <meta property="og:site_name" content="Fighting">
 <meta property="og:description" content="一直想写一些关于C语言的博客，奈何总有这样或者那样的事儿给耽搁了，现在终于有点时间能够写些东西了，此文只为我的回忆，也许能帮到后来人，算是略尽绵薄之力。本文属个人备忘之作，算不得教程，如有谬误之处，还请您能够予以批评。">
-<meta property="og:updated_time" content="2015-12-02T09:10:34.000Z">
+<meta property="og:updated_time" content="2015-12-06T02:45:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C语言之旅--1--起航">
 <meta name="twitter:description" content="一直想写一些关于C语言的博客，奈何总有这样或者那样的事儿给耽搁了，现在终于有点时间能够写些东西了，此文只为我的回忆，也许能帮到后来人，算是略尽绵薄之力。本文属个人备忘之作，算不得教程，如有谬误之处，还请您能够予以批评。">
@@ -316,7 +316,7 @@
         <span itemprop="articleBody"><p>一直想写一些关于C语言的博客，奈何总有这样或者那样的事儿给耽搁了，现在终于有点时间能够写些东西了，此文只为我的回忆，也许能帮到后来人，算是略尽绵薄之力。本文属个人备忘之作，算不得教程，如有谬误之处，还请您能够予以批评。<br><a id="more"></a></p>
 <h2 id="编译环境">编译环境</h2><p>本来是不想说编译环境的，不过想想还是加上吧，以免后面编译时会因为环境不对，而造成无法编译的情况。</p>
 <h3 id="编译器">编译器</h3><p>如果是linux环境学习，那么这一小节可以跳过。</p>
-<p>在windows下，首选的编译器是使用<a href="http://gcc.gnu.org" target="_blank" rel="external">GNU gcc</a>，目前最新版本是5.2，当然可以选择其他编译器。<br><a href="http://gcc.gnu.org" target="_blank" rel="external">下载页面</a><br>下载正确的版本进行安装，安装过后按Win+R，键入cmd打开命令行，在命令行中输入gcc -version，如果出现版本信息，那么恭喜你，编译环境安装成功O(∩_∩)O~。</p>
+<p>在windows下，首选的编译器是使用<a href="http://www.mingw.org" target="_blank" rel="external">MinGW</a>，目前最新版本是5.2，当然可以选择其他编译器。<br><a href="http://sourceforge.net/projects/mingw-w64/?source=recommended" target="_blank" rel="external">下载页面</a><br>下载正确的版本进行安装，安装过后按Win+R，键入cmd打开命令行，在命令行中输入gcc -version，如果出现版本信息，那么恭喜你，编译环境安装成功O(∩_∩)O~。</p>
 <h2 id="Hello_World">Hello World</h2><p>古往今来，各种关于编程的教材第一个例子就是HelloWorld，当然我这个俗人，难免免俗了。<br>请在记事本中键入一下代码，命名为main.c<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">main</span><span class="class">.c</span></span><br></pre></td></tr></table></figure></p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>在命令行下切换目录到源文件目录，然后键入命令<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">gcc</span> <span class="tag">-c</span> <span class="tag">main</span><span class="class">.c</span> <span class="tag">-o</span> <span class="tag">main</span><span class="class">.exe</span></span><br></pre></td></tr></table></figure></p>
@@ -442,7 +442,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

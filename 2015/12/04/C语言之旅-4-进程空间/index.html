@@ -58,7 +58,7 @@
 <meta property="og:site_name" content="Fighting">
 <meta property="og:description" content="想来想去，还是 觉得把进程空间放在这篇博客写，这样有助于后面的更好的理解内存，理解了内存相信指针的理解与使用会更加简单。">
 <meta property="og:image" content="http://yoursite.com/uploads/C语言/C语言之旅-4-进程空间.png">
-<meta property="og:updated_time" content="2015-12-04T14:46:15.000Z">
+<meta property="og:updated_time" content="2015-12-06T02:30:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C语言之旅-4-进程空间">
 <meta name="twitter:description" content="想来想去，还是 觉得把进程空间放在这篇博客写，这样有助于后面的更好的理解内存，理解了内存相信指针的理解与使用会更加简单。">
@@ -321,6 +321,7 @@
 <h4 id="用户空间">用户空间</h4><p>从0—-0xbfffffff,内核空间从3G—-4G。用户进程通常情<br>况下只能访问用户空间的虚拟地址，不能访问内核空间。</p>
 <p>程序中访问的内存地址不再是实际的物理内存地址，而是一个虚拟地址，然后由操作系统将这个虚拟地址映射到适当的物理内存地址上。这样，只要操作系统处理好虚拟地址到物理内存地址的映射，就可以保证不同的程序最终访问的内存地址位于不同的区域，彼此没有重叠，就可以达到内存地址空间隔离的效果。</p>
 <p><img src="/uploads/C语言/C语言之旅-4-进程空间.png" alt="..."></p>
+<p>好啦，这篇博文就到这了，如果对您有所帮助还请继续关注，如果对您毫无帮助，请联系博主，或者右上角红叉。</p>
 </span>
       
     </div>
@@ -439,7 +440,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
