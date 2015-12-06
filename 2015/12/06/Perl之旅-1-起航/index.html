@@ -57,7 +57,7 @@
 <meta property="og:url" content="http://yoursite.com/2015/12/06/Perl之旅-1-起航/index.html">
 <meta property="og:site_name" content="Fighting">
 <meta property="og:description" content="Perl笔者也是刚刚接触，看介绍就是一种解释型语言，像是一种脚本语言。">
-<meta property="og:updated_time" content="2015-12-06T07:06:16.000Z">
+<meta property="og:updated_time" content="2015-12-06T08:04:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Perl之旅-1-起航">
 <meta name="twitter:description" content="Perl笔者也是刚刚接触，看介绍就是一种解释型语言，像是一种脚本语言。">
@@ -324,7 +324,7 @@
 <p>然后修改文件的权限，添加可执行权限<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ chomd a+x perl_program.plx</span><br></pre></td></tr></table></figure></p>
 <p>执行如下命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ./perl_program.plx</span><br></pre></td></tr></table></figure></p>
 <p>得到一下结果<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hello World</span><br></pre></td></tr></table></figure></p>
-<p>那么恭喜你，你的第一个Perl程序已经运行成功了哈哈。</p>
+<p>那么恭喜你，你的第一个Perl程序已经运行成功了🌹。</p>
 <h2 id="使用指定版本特性">使用指定版本特性</h2><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#! /usr/bin/perl</span></span><br><span class="line"><span class="keyword">use</span> <span class="number">5.0</span>.<span class="number">10</span></span><br><span class="line"><span class="keyword">say</span> <span class="string">"Hello World!"</span>;</span><br></pre></td></tr></table></figure>
 <p>使用say不需要换行符。</p>
 <h2 id="走马观花">走马观花</h2><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#! /usr/bin/perl                 </span></span><br><span class="line"><span class="variable">@lines</span> = <span class="string">`perldoc -u -f atan2`</span>;</span><br><span class="line"><span class="keyword">foreach</span> (<span class="variable">@lines</span>)&#123;</span><br><span class="line">    <span class="regexp">s/\w&lt;([^&gt;]+)&gt;/\U$1/g</span>;</span><br><span class="line">    <span class="keyword">print</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
