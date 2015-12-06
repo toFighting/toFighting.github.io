@@ -51,17 +51,16 @@
 
 
 
-<meta name="description" content="想来想去，还是 觉得把进程空间放在这篇博客写，这样有助于后面的更好的理解内存，理解了内存相信指针的理解与使用会更加简单。">
+<meta name="description" content="在语文语法里面就有 “如果…就；否则…”，那么在编程语言中也有类似的语法。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C语言之旅-4-进程空间">
-<meta property="og:url" content="http://yoursite.com/2015/12/04/C语言之旅-4-进程空间/index.html">
+<meta property="og:title" content="C语言之旅-8-条件、分支、循环语句">
+<meta property="og:url" content="http://yoursite.com/2015/12/06/C语言之旅-8-条件、分支、循环语句/index.html">
 <meta property="og:site_name" content="Fighting">
-<meta property="og:description" content="想来想去，还是 觉得把进程空间放在这篇博客写，这样有助于后面的更好的理解内存，理解了内存相信指针的理解与使用会更加简单。">
-<meta property="og:image" content="http://yoursite.com/uploads/C语言/C语言之旅-4-进程空间.png">
-<meta property="og:updated_time" content="2015-12-06T02:30:40.000Z">
+<meta property="og:description" content="在语文语法里面就有 “如果…就；否则…”，那么在编程语言中也有类似的语法。">
+<meta property="og:updated_time" content="2015-12-06T12:05:45.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C语言之旅-4-进程空间">
-<meta name="twitter:description" content="想来想去，还是 觉得把进程空间放在这篇博客写，这样有助于后面的更好的理解内存，理解了内存相信指针的理解与使用会更加简单。">
+<meta name="twitter:title" content="C语言之旅-8-条件、分支、循环语句">
+<meta name="twitter:description" content="在语文语法里面就有 “如果…就；否则…”，那么在编程语言中也有类似的语法。">
 
 
 
@@ -73,7 +72,7 @@
   };
 </script>
 
-  <title> C语言之旅-4-进程空间 | Fighting </title>
+  <title> C语言之旅-8-条件、分支、循环语句 | Fighting </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -259,7 +258,7 @@
             
             
               
-                C语言之旅-4-进程空间
+                C语言之旅-8-条件、分支、循环语句
               
             
           </h1>
@@ -268,8 +267,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-12-04T10:37:45+08:00" content="2015-12-04">
-              2015-12-04
+            <time itemprop="dateCreated" datetime="2015-12-06T19:36:26+08:00" content="2015-12-06">
+              2015-12-06
             </time>
           </span>
 
@@ -294,8 +293,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/12/04/C语言之旅-4-进程空间/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/04/C语言之旅-4-进程空间/" itemprop="commentsCount"></span>
+                <a href="/2015/12/06/C语言之旅-8-条件、分支、循环语句/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/06/C语言之旅-8-条件、分支、循环语句/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -314,13 +313,21 @@
       
 
       
-        <span itemprop="articleBody"><p>想来想去，还是 觉得把进程空间放在这篇博客写，这样有助于后面的更好的理解内存，理解了内存相信指针的理解与使用会更加简单。</p>
+        <span itemprop="articleBody"><p>在语文语法里面就有 “如果…就；否则…”，那么在编程语言中也有类似的语法。</p>
 <a id="more"></a>
-<h3 id="程序vs_进程">程序vs 进程</h3><p> 程序：源代码经编译器编译后生成的可执行文件。<br> 进程：可执行文件，运行后被加载内存中运行。运行的过程，即为进程。以下是可<br>执行文件被加载到内存以后内存分布情况。</p>
-<h3 id="进程空间布局">进程空间布局</h3><p>操作系统（32 位）采用虚拟内存技术，将4G 的虚拟地址空间划分为两个部分:用<br>户空间和内核空间。</p>
-<h4 id="用户空间">用户空间</h4><p>从0—-0xbfffffff,内核空间从3G—-4G。用户进程通常情<br>况下只能访问用户空间的虚拟地址，不能访问内核空间。</p>
-<p>程序中访问的内存地址不再是实际的物理内存地址，而是一个虚拟地址，然后由操作系统将这个虚拟地址映射到适当的物理内存地址上。这样，只要操作系统处理好虚拟地址到物理内存地址的映射，就可以保证不同的程序最终访问的内存地址位于不同的区域，彼此没有重叠，就可以达到内存地址空间隔离的效果。</p>
-<p><img src="/uploads/C语言/C语言之旅-4-进程空间.png" alt="..."></p>
+<h2 id="条件语句">条件语句</h2><h3 id="if…else…">if…else…</h3><p>条件语句一般是配合表达式使用，对于满足条件的才执行。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> local_var1 = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">int</span> local_var2 = <span class="number">20</span>;</span><br><span class="line">    <span class="keyword">if</span> (local_var1 &gt; local_var2)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span> (<span class="string">"local_var1 &gt; local_var2\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span> (<span class="string">"local_var1 &lt;= local_var2\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>以上就是if…else…语句的使用方法。</p>
+<h3 id="if…else_if…else…">if…else if…else…</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> local_var1 = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">int</span> local_var2 = <span class="number">20</span>;</span><br><span class="line">    <span class="keyword">int</span> local_var3 = <span class="number">30</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (local_var2 &lt; local_var1)</span><br><span class="line">    &#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (ocal_var2 &lt; local_var3)</span><br><span class="line">    &#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>条件语句只会选择其中的一个分支执行，不可能同时执行两个分支。</p>
+<h2 id="分支">分支</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> num = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">switch</span>(num)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">            ...;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">            ...;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        defualt:</span><br><span class="line">            ...;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意：再switch判断的变量类型，只能是整型，每一个分支下语句结束必须使用break进行跳出，否则会顺序向下执行。</p>
+<h2 id="循环">循环</h2><h3 id="for">for</h3><p>for语句的语法。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (变量; 条件; 循环后的表达式)</span><br><span class="line">&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>for语句通过判断条件决定是否进入循环，而循环一次之后，会执行循环后的表达式，然后继续判断条件。<br>实例：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> arr[<span class="number">10</span>] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">0</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span> (<span class="string">"%d\n"</span>, arr[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="while">while</h2><p>while语句的语法。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (条件)</span><br><span class="line">&#123;</span><br><span class="line">    ...;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>while语句先判断条件然后决定是否进去循环。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> arr[<span class="number">10</span>] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">0</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (i &lt; <span class="number">10</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span> (<span class="string">"%d\n"</span>, arr[i++]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="do…while…">do…while…</h3><p>do…while语句的语法。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;<span class="keyword">while</span>(条件);</span><br></pre></td></tr></table></figure></p>
+<p>do…while语句会先执行循环体中的代码，然后再判断条件是否再次进入循环体。</p>
+<h2 id="死循环">死循环</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">&#123;</span><br><span class="line">    ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (;;)</span><br><span class="line">&#123;</span><br><span class="line">    ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">&#123;</span><br><span class="line">    ;</span><br><span class="line">&#125;<span class="keyword">while</span>(<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
 <p>好啦，这篇博文就到这了，如果对您有所帮助还请继续关注，如果对您毫无帮助，请联系博主，或者右上角红叉。</p>
 </span>
       
@@ -339,17 +346,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/12/03/C语言之旅-3-再议变量/" rel="next" title="C语言之旅-3-再议变量">
-                <i class="fa fa-chevron-left"></i> C语言之旅-3-再议变量
+              <a href="/2015/12/06/Perl之旅-3-变量/" rel="next" title="Perl之旅-3-变量">
+                <i class="fa fa-chevron-left"></i> Perl之旅-3-变量
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/12/04/C语言之旅-5-数组/" rel="prev" title="C语言之旅-5-数组">
-                C语言之旅-5-数组 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -364,10 +367,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/12/04/C语言之旅-4-进程空间/"
-     data-title="C语言之旅-4-进程空间"
+        <div class="ds-share flat" data-thread-key="2015/12/06/C语言之旅-8-条件、分支、循环语句/"
+     data-title="C语言之旅-8-条件、分支、循环语句"
      data-content=""
-     data-url="http://yoursite.com/2015/12/04/C语言之旅-4-进程空间/">
+     data-url="http://yoursite.com/2015/12/06/C语言之旅-8-条件、分支、循环语句/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -395,8 +398,8 @@
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/12/04/C语言之旅-4-进程空间/"
-           data-title="C语言之旅-4-进程空间" data-url="http://yoursite.com/2015/12/04/C语言之旅-4-进程空间/">
+      <div class="ds-thread" data-thread-key="2015/12/06/C语言之旅-8-条件、分支、循环语句/"
+           data-title="C语言之旅-8-条件、分支、循环语句" data-url="http://yoursite.com/2015/12/06/C语言之旅-8-条件、分支、循环语句/">
       </div>
     
   </div>
@@ -493,7 +496,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#程序vs_进程"><span class="nav-number">1.</span> <span class="nav-text">程序vs 进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进程空间布局"><span class="nav-number">2.</span> <span class="nav-text">进程空间布局</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#用户空间"><span class="nav-number">2.1.</span> <span class="nav-text">用户空间</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#条件语句"><span class="nav-number">1.</span> <span class="nav-text">条件语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#if…else…"><span class="nav-number">1.1.</span> <span class="nav-text">if…else…</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#if…else_if…else…"><span class="nav-number">1.2.</span> <span class="nav-text">if…else if…else…</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分支"><span class="nav-number">2.</span> <span class="nav-text">分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#循环"><span class="nav-number">3.</span> <span class="nav-text">循环</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#for"><span class="nav-number">3.1.</span> <span class="nav-text">for</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#while"><span class="nav-number">4.</span> <span class="nav-text">while</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#do…while…"><span class="nav-number">4.1.</span> <span class="nav-text">do…while…</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#死循环"><span class="nav-number">5.</span> <span class="nav-text">死循环</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
